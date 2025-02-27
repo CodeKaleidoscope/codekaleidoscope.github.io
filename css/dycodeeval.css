@@ -9,15 +9,6 @@ body {
       background-color: #76323F;
   }
   
-  .link-block a {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      margin-left: 50px;
-      margin-right: 50px;
-      background-color: #76323F;
-      color: #FFFFFF;
-  }
-  
   .dnerf {
     font-variant: small-caps;
   }
@@ -107,4 +98,12 @@ body {
 
   .main-results {
     margin-top: 40px;
+  }
+
+  .link-block a {
+    background-color: #76323F;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
+    color: #FFFFFF;
   }
