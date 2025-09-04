@@ -639,6 +639,15 @@ body {
     max-width: 300px;
   }
   
+  .citation-box {
+    padding: 1.5rem;
+    min-height: 150px;
+  }
+  
+  .citation-bibtex {
+    font-size: 0.8rem;
+  }
+  
   .package-buttons {
     flex-direction: column;
     align-items: center;
@@ -860,7 +869,7 @@ body {
 /* Citation Section Styles */
 .citation-content {
   text-align: left;
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -874,10 +883,13 @@ body {
 .citation-box {
   background: rgba(0, 0, 0, 0.2);
   border-radius: var(--border-radius);
-  padding: 1.5rem;
+  padding: 2rem;
   margin: 2rem 0;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
 }
 
 .citation-bibtex {
@@ -889,7 +901,9 @@ body {
   margin: 0;
   white-space: pre-wrap;
   word-wrap: break-word;
-  overflow-x: auto;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .citation-actions {
