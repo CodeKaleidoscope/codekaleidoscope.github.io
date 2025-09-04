@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="DyCodeEval, D-NeRF, NeRF">
+        content="PPM: Programming Problem Merging - A dynamic benchmarking strategy for code generation LLMs">
+  <meta name="keywords" content="PPM, Programming Problem Merging, Code LLMs, Data Contamination, Dynamic Benchmarking">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PPM: Programming Problem Merging</title>
+  <title>PPM - Programming Problem Merging</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700;1,900&display=swap"
+  <!-- Modern Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
 
+  <!-- CSS Libraries -->
   <link rel="stylesheet" href="./css/bulma.min.css">
   <link rel="stylesheet" href="./css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./css/bulma-slider.min.css">
   <link rel="stylesheet" href="./css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./css/ppm.css">
+  <link rel="stylesheet" href="./css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
+  <!-- JavaScript Libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./js/fontawesome.all.min.js"></script>
   <script src="./js/bulma-carousel.min.js"></script>
@@ -29,47 +32,138 @@
 <body>
 
 
-<section class="hero">
+<!-- Navigation -->
+<nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <strong>Code Kaleidoscope</strong>
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="index.html">Home</a>
+        <a class="navbar-item" href="dycodeeval.html">DyCodeEval</a>
+        <a class="navbar-item is-active" href="ppm.html">PPM</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero is-fullheight-with-navbar">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1">PPM</h1>
-          <h2 class="title is-3">Programming Problem Merging</h2>
+          <div class="hero-content">
+            <h1 class="title is-1 hero-title">PPM</h1>
+            <h2 class="subtitle is-3 hero-subtitle">
+              Programming Problem Merging
+            </h2>
+            <p class="hero-description">
+              A dynamic benchmarking strategy that focuses on merging two different problems 
+              to create new problems free of contamination for accurate LLM evaluation.
+            </p>
+            <div class="hero-buttons">
+              <a href="https://arxiv.org/pdf/2401.15545" class="button is-primary is-large">
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Read Paper</span>
+              </a>
+              <a href="https://github.com/SeekingDream/PPM" class="button is-light is-large">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>View Code</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="currentColor"></path>
+      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="currentColor"></path>
+      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+    </svg>
+  </div>
+</section>
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2401.15545" class="external-link button is-normal is-round">
+<!-- Coming Soon Section -->
+<section class="section package-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="card package-card">
+          <div class="card-content">
+            <div class="content has-text-centered">
+              <h2 class="title is-3 section-title">Coming Soon</h2>
+              <div class="package-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <p class="package-description">
+                We're currently working on expanding the PPM page with detailed information about 
+                Programming Problem Merging methodology, results, and implementation details. 
+                Stay tuned for updates!
+              </p>
+              <div class="package-buttons">
+                <a href="https://arxiv.org/pdf/2401.15545" class="button is-primary is-large">
                   <span class="icon">
                     <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>Read Paper</span>
                 </a>
-              </span>
-              <span class="link-block">
-                <a href="https://github.com/SeekingDream/PPM"
-                  class="external-link button is-normal is-round">
+                <a href="https://github.com/SeekingDream/PPM" class="button is-light is-large">
                   <span class="icon">
                     <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>View Code</span>
                 </a>
-              </span>
+              </div>
             </div>
-          
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
+<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
+        <div class="content has-text-centered">
+          <div class="footer-content">
+            <p class="footer-text">
+              The source code for this website is borrowed from 
+              <a href="https://github.com/nerfies/nerfies.github.io" class="footer-link">here</a>!
+            </p>
+            <p class="footer-text">
+              Reach out to <strong>Simin Chen</strong>, <strong>Pranav Pusarla</strong>, or <strong>Baishakhi Ray</strong> for any questions.
+            </p>
+            <div class="footer-links">
+              <a href="mailto:contact@codekaleidoscope.com" class="footer-link">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a href="https://github.com/SeekingDream/PPM" class="footer-link">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://arxiv.org/pdf/2401.15545" class="footer-link">
+                <i class="fas fa-file-pdf"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

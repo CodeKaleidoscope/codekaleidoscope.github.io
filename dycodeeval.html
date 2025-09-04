@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="DyCodeEval, D-NeRF, NeRF">
+        content="DyCodeEval: Dynamic Benchmarking of Reasoning Capabilities in Code Large Language Models under Data Contamination">
+  <meta name="keywords" content="DyCodeEval, Dynamic Benchmarking, Code LLMs, Data Contamination, Context Diversification">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DyCodeEval: Dynamic Benchmarking of Reasoning Capabilities in Code Large Language Models under Data Contamination</title>
+  <title>DyCodeEval - Dynamic Benchmarking for Code LLMs</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700;1,900&display=swap"
+  <!-- Modern Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
 
+  <!-- CSS Libraries -->
   <link rel="stylesheet" href="./css/bulma.min.css">
   <link rel="stylesheet" href="./css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./css/bulma-slider.min.css">
   <link rel="stylesheet" href="./css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./css/dycodeeval.css">
+  <link rel="stylesheet" href="./css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
+  <!-- JavaScript Libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./js/fontawesome.all.min.js"></script>
   <script src="./js/bulma-carousel.min.js"></script>
@@ -29,176 +32,241 @@
 <body>
 
 
-<section class="hero">
+<!-- Navigation -->
+<nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <strong>Code Kaleidoscope</strong>
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="index.html">Home</a>
+        <a class="navbar-item is-active" href="dycodeeval.html">DyCodeEval</a>
+        <a class="navbar-item" href="ppm.html">PPM</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero is-fullheight-with-navbar">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1">DyCodeEval</h1>
-          <h2 class="title is-3">Dynamic Benchmarking of Reasoning Capabilities in Code Large Language Models under Data Contamination</h2>
-          <!-- <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://siminchen.site">Simin Chen</a>,</span>
-            <span class="author-block">
-              <a href="">Pranav Pusarla</a>,</span>
-            <span class="author-block">
-              <a href="https://www.rayb.info">Baishakhi Ray</a>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Columbia University</span>
-          </div> -->
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="" class="external-link button is-normal is-round">
-                  <span class="icon">
-                    <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://github.com/SeekingDream/DiversePass"
-                  class="external-link button is-normal is-round">
-                  <span class="icon">
-                    <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                </a>
-              </span>
+          <div class="hero-content">
+            <h1 class="title is-1 hero-title">DyCodeEval</h1>
+            <h2 class="subtitle is-3 hero-subtitle">
+              Dynamic Benchmarking of Reasoning Capabilities in Code Large Language Models under Data Contamination
+            </h2>
+            <p class="hero-description">
+              A novel dynamic benchmarking suite that employs multiple agents to generate diverse 
+              semantically equivalent problems for transparent contamination-free evaluation on code LLMs.
+            </p>
+            <div class="hero-buttons">
+              <a href="https://arxiv.org/abs/2503.04149v2" class="button is-primary is-large">
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Read Paper</span>
+              </a>
+              <a href="https://github.com/SeekingDream/DyCodeEval" class="button is-light is-large">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>View Code</span>
+              </a>
             </div>
-          
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="currentColor"></path>
+      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="currentColor"></path>
+      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+    </svg>
+  </div>
 </section>
 
 
-<section class="section">
+<!-- Introduction Section -->
+<section class="section overview-section">
   <div class="container is-max-desktop">
-    <!-- Introduction -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Introduction</h2>
-        <div class="content has-text-justified">
-          <span class="dnerf">DyCodeEval</span> is a novel dynamic benchmarking suite that employs multiple agents 
-          to generate a set of diverse semantically equivalent problems in order to provide transparent contamination-free
-          evaluation on code LLMs. Below is an example of a problem that was generated by <span class="dnerf">DyCodeEval</span>
-          from the seed programming problem.
-        </div>
-        <div class="columns is-centered">
-          <!-- center the image -->
-          <img src="./images/dycodeeval_example.png" alt="Teaser" class="teaser-image center" width="60%" />
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="card overview-card">
+          <div class="card-content">
+            <div class="content has-text-centered">
+              <h2 class="title is-3 section-title">Introduction</h2>
+              <p class="overview-text">
+                <strong>DyCodeEval</strong> is a novel dynamic benchmarking suite that employs multiple agents 
+                to generate a set of diverse semantically equivalent problems in order to provide transparent contamination-free
+                evaluation on code LLMs. Below is an example of a problem that was generated by <strong>DyCodeEval</strong>
+                from the seed programming problem.
+              </p>
+              <div class="example-visual">
+                <img src="./images/dycodeeval_example.png" alt="DyCodeEval Example" class="center" style="max-width: 80%; border-radius: 12px; box-shadow: var(--shadow-lg);" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!--/ Introduction -->
   </div>
 </section>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Design Overview -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Design Overview</h2>
-          <div class="columns is-centered">
-            <!-- center the image -->
-            <img src="./images/design_overview.png" alt="Teaser" class="teaser-image center" />
-          </div>
-          <div class="content has-text-justified">
-            <span class="dnerf">DyCodeEval</span> uses four different agents to generate a diverse problem set: 
-            Scenario Proposer, Context Generator, Prompt Rewriter, Validator. The Scenario Proposer
-            selects scenarios from a predefined pool and uses them to iteratively generate more scenarios
-            through LLM prompting. The Context Generator selects a scenario at random and assigns
-            contextual information to each input variable of the problem based on the chosen scenario. The
-            Prompt Rewriter uses the contextual information and scenario to rewrite the original programming
-            problem. The Validator then determines whether the original and newly generated problem are consistent
-            in core concept and solution.
+<!-- Design Overview Section -->
+<section class="section problem-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="card problem-card">
+          <div class="card-content">
+            <div class="content has-text-centered">
+              <h2 class="title is-3 section-title">Design Overview</h2>
+              <div class="design-visual">
+                <img src="./images/design_overview.png" alt="Design Overview" class="center" style="max-width: 100%; border-radius: 12px; box-shadow: var(--shadow-lg);" />
+              </div>
+              <div class="design-text has-text-justified">
+                <p>
+                  <strong>DyCodeEval</strong> uses four different agents to generate a diverse problem set: 
+                  <strong>Scenario Proposer</strong>, <strong>Context Generator</strong>, <strong>Prompt Rewriter</strong>, and <strong>Validator</strong>. 
+                  The Scenario Proposer selects scenarios from a predefined pool and uses them to iteratively generate more scenarios
+                  through LLM prompting. The Context Generator selects a scenario at random and assigns
+                  contextual information to each input variable of the problem based on the chosen scenario. The
+                  Prompt Rewriter uses the contextual information and scenario to rewrite the original programming
+                  problem. The Validator then determines whether the original and newly generated problem are consistent
+                  in core concept and solution.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <!--/ Design Overview -->
     </div>
-  </section>
+  </div>
+</section>
   
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Contaminated Model Evaluation -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Contaminated Model Evaluation</h2>
-          <div class="columns is-centered">
-            <!-- center the image -->
-            <img src="./images/contaminated_eval.png" alt="Teaser" class="teaser-image center" width="80%"/>
-          </div>
-          <div class="content has-text-justified">
-            To determine the extent of model contamination and the validity of <span class="dnerf">DyCodeEval</span>, we ran
-            experiments with three different models where we simulated model contamination by finetuning the model with increasing
-            percentages of the dataset. From the top row, we can see that all the models that are finetuned with a specific leaked
-            dataset increase in accuracy rapidly when evaluated on that dataset. However, in the bottom row, we see that even though
-            the dataset is leaked, the models maintain the same accuracy due to <span class="dnerf">DyCodeEval</span>: 
-            our dynamic benchmarking method.
-          </div>
-        </div>
-      </div>
-      <!--/ Contaminated Model Evaluation -->
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- On-the-Wild Benchmarking -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">On-the-Wild Benchmarking</h2>
-          <div class="columns is-centered">
-            <!-- center the image -->
-            <img src="./images/wild_benchmarking.png" alt="Teaser" class="teaser-image center" width="90%"/>
-          </div>
-          <div class="content has-text-justified">
-            We further evaluate <span class="dnerf">DyCodeEval</span> on 12 more on-the-wild code LLMs. We observe that for 
-            both datasets, the overfitted model appears as an outlier while the original models <span class="pass1">Pass@1</span> 
-            scores maintain a linear relationship.
+<!-- Results Sections -->
+<section class="section solution-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="card solution-card">
+          <div class="card-content">
+            <div class="content has-text-centered">
+              <h2 class="title is-3 section-title">Contaminated Model Evaluation</h2>
+              <div class="results-visual">
+                <img src="./images/contaminated_eval.png" alt="Contaminated Model Evaluation" class="center" style="max-width: 90%; border-radius: 12px; box-shadow: var(--shadow-lg);" />
+              </div>
+              <div class="results-text has-text-justified">
+                <p>
+                  To determine the extent of model contamination and the validity of <strong>DyCodeEval</strong>, we ran
+                  experiments with three different models where we simulated model contamination by finetuning the model with increasing
+                  percentages of the dataset. From the top row, we can see that all the models that are finetuned with a specific leaked
+                  dataset increase in accuracy rapidly when evaluated on that dataset. However, in the bottom row, we see that even though
+                  the dataset is leaked, the models maintain the same accuracy due to <strong>DyCodeEval</strong>: 
+                  our dynamic benchmarking method.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <!--/ On-the-Wild Benchmarking -->
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Stability Assessment -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Stability Assessment</h2>
-          <div class="columns is-centered">
-            <!-- center the image -->
-            <img src="./images/model_stability.png" alt="Teaser" class="teaser-image center" width="70%"/>
-          </div>
-          <div class="content has-text-justified">
-            Since <span class="dnerf">DyCodeEval</span> generates a unique benchmarking dataset each time, we run a 
-            stability assessment to determine if consistency is maintained. We find that the variance in benchmarking
-            scores is minimal to the mean when <span class="pass1">Pass@1</span> is measured after being run 10 different
-            times demonstrating <span class="dnerf">DyCodeEval</span>'s stability.
+<section class="section overview-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="card overview-card">
+          <div class="card-content">
+            <div class="content has-text-centered">
+              <h2 class="title is-3 section-title">On-the-Wild Benchmarking</h2>
+              <div class="results-visual">
+                <img src="./images/wild_benchmarking.png" alt="Wild Benchmarking" class="center" style="max-width: 100%; border-radius: 12px; box-shadow: var(--shadow-lg);" />
+              </div>
+              <div class="results-text has-text-justified">
+                <p>
+                  We further evaluate <strong>DyCodeEval</strong> on 12 more on-the-wild code LLMs. We observe that for 
+                  both datasets, the overfitted model appears as an outlier while the original models <strong>Pass@1</strong> 
+                  scores maintain a linear relationship.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <!--/ Stability Assessment -->
     </div>
-  </section>
+  </div>
+</section>
 
+<section class="section problem-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="card problem-card">
+          <div class="card-content">
+            <div class="content has-text-centered">
+              <h2 class="title is-3 section-title">Stability Assessment</h2>
+              <div class="results-visual">
+                <img src="./images/model_stability.png" alt="Model Stability" class="center" style="max-width: 80%; border-radius: 12px; box-shadow: var(--shadow-lg);" />
+              </div>
+              <div class="results-text has-text-justified">
+                <p>
+                  Since <strong>DyCodeEval</strong> generates a unique benchmarking dataset each time, we run a 
+                  stability assessment to determine if consistency is maintained. We find that the variance in benchmarking
+                  scores is minimal to the mean when <strong>Pass@1</strong> is measured after being run 10 different
+                  times demonstrating <strong>DyCodeEval</strong>'s stability.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
+        <div class="content has-text-centered">
+          <div class="footer-content">
+            <p class="footer-text">
+              The source code for this website is borrowed from 
+              <a href="https://github.com/nerfies/nerfies.github.io" class="footer-link">here</a>!
+            </p>
+            <p class="footer-text">
+              Reach out to <strong>Simin Chen</strong>, <strong>Pranav Pusarla</strong>, or <strong>Baishakhi Ray</strong> for any questions.
+            </p>
+            <div class="footer-links">
+              <a href="mailto:contact@codekaleidoscope.com" class="footer-link">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a href="https://github.com/SeekingDream/DyCodeEval" class="footer-link">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://arxiv.org/abs/2503.04149v2" class="footer-link">
+                <i class="fas fa-file-pdf"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="DyCodeEval, D-NeRF, NeRF">
+        content="Code Kaleidoscope: Solving Data Contamination through Dynamic Benchmarking for Code Generation LLMs">
+  <meta name="keywords" content="Code Kaleidoscope, DyCodeEval, PPM, Data Contamination, LLM Benchmarking, Code Generation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Code Kaleidoscope</title>
+  <title>Code Kaleidoscope - Dynamic Benchmarking for Code LLMs</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700;1,900&display=swap"
+  <!-- Modern Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
 
+  <!-- CSS Libraries -->
   <link rel="stylesheet" href="./css/bulma.min.css">
   <link rel="stylesheet" href="./css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./css/bulma-slider.min.css">
@@ -20,6 +22,7 @@
   <link rel="stylesheet" href="./css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
+  <!-- JavaScript Libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./js/fontawesome.all.min.js"></script>
   <script src="./js/bulma-carousel.min.js"></script>
@@ -29,188 +32,259 @@
 <body>
 
 
-<section class="hero">
+<!-- Navigation -->
+<nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <strong>Code Kaleidoscope</strong>
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="index.html">Home</a>
+        <a class="navbar-item" href="dycodeeval.html">DyCodeEval</a>
+        <a class="navbar-item" href="ppm.html">PPM</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero is-fullheight-with-navbar">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <div class="title with-image">
-            <h1 class="title is-1">Code Kaleidoscope</h1> 
-            <img src="./images/magnifying_glass.png" alt="Teaser" class="magnifying_glass" width="5%" />
+          <div class="hero-content">
+            <div class="title-container">
+              <h1 class="title is-1 hero-title">Code Kaleidoscope</h1>
+              <div class="title-decoration">
+                <div class="decoration-dot"></div>
+                <div class="decoration-dot"></div>
+                <div class="decoration-dot"></div>
+              </div>
+            </div>
+            <h2 class="subtitle is-3 hero-subtitle">
+              Solving Data Contamination through Dynamic Benchmarking
+            </h2>
+            <p class="hero-description">
+              A comprehensive suite of dynamic benchmarking strategies for accurate and transparent 
+              evaluation of code generation Large Language Models, free from data contamination.
+            </p>
+            <div class="hero-buttons">
+              <a href="dycodeeval.html" class="button is-primary is-large">
+                <span class="icon">
+                  <i class="fas fa-recycle"></i>
+                </span>
+                <span>Explore DyCodeEval</span>
+              </a>
+              <a href="ppm.html" class="button is-light is-large">
+                <span class="icon">
+                  <i class="fas fa-plus"></i>
+                </span>
+                <span>Learn about PPM</span>
+              </a>
+            </div>
           </div>
-          <div class="dots">
-            <h1 class="dot"></h1>
-            <h1 class="dot"></h1>
-            <h1 class="dot"></h1>
-          </div>
-          <h1 class="title is-3">Solving Data Contamination through Dynamic Benchmarking</h1>
-          <!-- <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://siminchen.site">Simin Chen</a>,</span>
-            <span class="author-block">
-              <a href="">Pranav Pusarla</a>,</span>
-            <span class="author-block">
-              <a href="https://www.rayb.info">Baishakhi Ray</a>
-            </span>
-          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="currentColor"></path>
+      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="currentColor"></path>
+      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+    </svg>
+  </div>
+</section>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Columbia University</span>
-          </div> -->
-          
+<!-- Overview Section -->
+<section class="section overview-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="card overview-card">
+          <div class="card-content">
+            <div class="content has-text-centered">
+              <h2 class="title is-3 section-title">About Code Kaleidoscope</h2>
+              <p class="overview-text">
+                Code Kaleidoscope is a comprehensive suite of dynamic benchmarking strategies that offers accurate
+                and transparent evaluations on code generation LLMs. Our approach consists of two main 
+                strategies: <strong>Programming Problem Merging (PPM)</strong> and <strong>Context Diversification (DyCodeEval)</strong>.
+              </p>
+              <div class="strategy-cards">
+                <div class="strategy-card">
+                  <div class="strategy-icon">
+                    <i class="fas fa-plus-circle"></i>
+                  </div>
+                  <h3 class="title is-5">PPM</h3>
+                  <p>Programming Problem Merging focuses on merging two different problems to create a new problem free of contamination.</p>
+                  <a href="ppm.html" class="button is-primary is-outlined">
+                    <span class="icon">
+                      <i class="fas fa-arrow-right"></i>
+                    </span>
+                    <span>Learn More</span>
+                  </a>
+                </div>
+                <div class="strategy-card">
+                  <div class="strategy-icon">
+                    <i class="fas fa-recycle"></i>
+                  </div>
+                  <h3 class="title is-5">DyCodeEval</h3>
+                  <p>Context Diversification modifies the context of the problem to create a new problem free of contamination.</p>
+                  <a href="dycodeeval.html" class="button is-primary is-outlined">
+                    <span class="icon">
+                      <i class="fas fa-arrow-right"></i>
+                    </span>
+                    <span>Learn More</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Code Kaleidoscope Image -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <div class="columns is-centered">
-            <!-- center the image -->
-            <img src="./images/gray.png" alt="Teaser" class="teaser-image center" width="50%"/>
-          </div>
-          <div class="columns is-centered">
-            <p> Image that shows Code Kaledioscope overview</p>
-          </div>
-        </div>
-      </div>
-      <!--/ Code Kaleidoscope Image -->
-    </div>
-  </section>
-  
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Introduction -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <div class="content has-text-justified">
-            Code Kaledioscope is a set of dynamic benchmarking strategies that offers accurate
-            and transparent evaluations on code generation LLMs. This set consists of two main 
-            strategies: Programming Problem Merging (PPM) and Context Diversification (DyCodeEval). 
-            Programming Problem Merging is a strategy that focuses on merging two different problems
-            to create a new problem free of contamination. Context Diversification is a strategy that 
-            modifies the context of the problem to create a new problem free of contamination.
-          </div>
-          <div class="content has-text-centered">
-            <span class="link-block">
-              <a href="ppm.html"
-                class="external-link button is-normal">
-                <span class="icon">
-                  <i class="fa fa-plus"></i>
-                </span>
-                <span>PPM</span>
-              </a>
-            </span>
-            <span class="link-block">
-              <a href="dycodeeval.html"
-                class="external-link button is-normal">
-                <span class="icon">
-                  <i class="fa fa-recycle"></i>
-                </span>
-                <span>DyCodeEval</span>
-              </a>
-            </span>
+<!-- Problem Section -->
+<section class="section problem-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="card problem-card">
+          <div class="card-content">
+            <div class="content has-text-centered">
+              <h2 class="title is-3 section-title">The Data Contamination Problem</h2>
+              <div class="problem-visual">
+                <div class="problem-icon">
+                  <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <p class="problem-caption">Graph showing data contamination proof</p>
+              </div>
+              <div class="problem-text has-text-justified">
+                <p>
+                  Is data contamination really an issue? Although the data being used to train
+                  LLMs is unknown, benchmarks are public and are easily at risk for data scraping algorithms.
+                  By running experiments using different percentages of leaked benchmarking data, 
+                  we see that LLMs begin to show inflated accuracies on these benchmarks demonstrating a degree of contamination.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <!--/ Introduction -->
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Data Contamination Proof -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <div class="columns is-centered">
-            <!-- center the image -->
-            <img src="./images/gray.png" alt="Teaser" class="teaser-image center" width="50%"/>
-          </div>
-          <div>
-            <p>Graph that shows data contamination proof</p>
-          </div>
-          <div class="data-contamination has-text-justified">
-            Is data contamination really an issue? Although the data being used to train
-            LLMs is unknown, benchmarks are public and are easily at risk for data scraping algorithms.
-            By running experiments using different percentages of leaked benchmarking data, 
-            we see that LLMs begin to show inflated accuracies on these benchmarks demonstrating a degree of contamination. 
+<!-- Solution Section -->
+<section class="section solution-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="card solution-card">
+          <div class="card-content">
+            <div class="content has-text-centered">
+              <h2 class="title is-3 section-title">Our Solution: Code Kaleidoscope</h2>
+              <div class="solution-visual">
+                <div class="solution-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <p class="solution-caption">Results showing Code Kaleidoscope effectiveness</p>
+              </div>
+              <div class="solution-text has-text-justified">
+                <p>
+                  To prevent this widespread issue of data contamination, we propose Code Kaleidoscope.
+                  In Code Kaleidoscope, there are two main strategies: PPM and DyCodeEval. Each of these
+                  strategies aims to dynamically create new benchmarking problems that can be evaluated by
+                  the LLM. The graphs above show our results for each of the strategies. We can see that 
+                  although the LLM may be contaminated with leaked benchmarking data, it still evaluates at 
+                  the original accuracy on our new problems. Therefore, using Code Kaleidoscope allows 
+                  for transparent and accurate benchmarking of LLMs!
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <!--/ Data Contamination Proof -->
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Main Results -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <div class="columns is-centered">
-            <!-- center the image -->
-            <img src="./images/gray.png" alt="Teaser" class="teaser-image center" width="50%"/>
-          </div>
-          <div>
-            <p>Graphs of the results with Code Kaleidoscope being used</p>
-          </div>
-          <div class="main-results has-text-justified">
-            To prevent this widespread issue of data contamination, we propose Code Kaleidoscope.
-            In Code Kaleidoscope, there are two main strategies: PPM and DyCodeEval. Each of these
-            strategies aims to dynamically create new benchmarking problems that can be evaluated by
-            the LLM. The graphs above show our results for each of the strategies. We can see that 
-            although the LLM may be contaminated with leaked benchmarking data, it still evaluates at 
-            the original accuracy on our new problems. Therefore, using Code Kaleidoscope allows 
-            for transparent and accurate benchmarking of LLMs!
+<!-- Package Section -->
+<section class="section package-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="card package-card">
+          <div class="card-content">
+            <div class="content has-text-centered">
+              <h2 class="title is-3 section-title">Get Started with Code Kaleidoscope</h2>
+              <div class="package-icon">
+                <i class="fas fa-download"></i>
+              </div>
+              <p class="package-description">
+                Code Kaleidoscope is available and easy to implement in your code now.
+                By using the python package, you can take in a set of benchmarking data
+                and output a new diverse set of programming problems to evaluate your LLM on.
+              </p>
+              <div class="package-buttons">
+                <a href="https://pypi.org/" class="button is-primary is-large">
+                  <span class="icon">
+                    <i class="fab fa-python"></i>
+                  </span>
+                  <span>Install Package</span>
+                </a>
+                <a href="https://github.com/SeekingDream/CodeKaleidoscope" class="button is-light is-large">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>View on GitHub</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <!--/ Main Results -->
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Package Usage -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">How to use our package?</h2>
-          <div class="package-usage has-text-justified">
-            Code Kaleidoscope is available and easy to implement in your code now.
-            By using the python package, you can take in a set of benchmarking data
-            and output a new diverse set of programming problems to evaluate your LLM on.
-          </div>
-          <span class="link-block">
-            <a href="https://pypi.org/"
-              class="external-link button is-normal">
-              <span class="icon">
-                <i class="fa fa-file-code"></i>
-              </span>
-              <span>Package</span>
-            </a>
-          </span>
-        </div>
-      </div>
-      <!--/ Package Usage -->
-    </div>
-  </section>
-
-
+<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
-        <div class="content">
-          <p>
-            The source code for this website is borrowed from <a
-              href="https://github.com/nerfies/nerfies.github.io">here</a>!
-          </p>
-          <p>
-            Reach out to Simin Chen, Pranav Pusarla, or Baishakhi Ray for any questions.
-          </p>
+        <div class="content has-text-centered">
+          <div class="footer-content">
+            <p class="footer-text">
+              The source code for this website is borrowed from 
+              <a href="https://github.com/nerfies/nerfies.github.io" class="footer-link">here</a>!
+            </p>
+            <p class="footer-text">
+              Reach out to <strong>Simin Chen</strong>, <strong>Pranav Pusarla</strong>, or <strong>Baishakhi Ray</strong> for any questions.
+            </p>
+            <div class="footer-links">
+              <a href="mailto:contact@codekaleidoscope.com" class="footer-link">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a href="https://github.com/SeekingDream/CodeKaleidoscope" class="footer-link">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://arxiv.org/abs/2503.04149v2" class="footer-link">
+                <i class="fas fa-file-pdf"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
