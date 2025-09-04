@@ -629,6 +629,16 @@ body {
     max-width: 300px;
   }
   
+  .citation-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .citation-actions .button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
   .package-buttons {
     flex-direction: column;
     align-items: center;
@@ -759,8 +769,8 @@ body {
 }
 
 .feature-item {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
   gap: 1rem;
   padding: 1rem;
   background: var(--bg-primary);
@@ -807,7 +817,7 @@ body {
 .access-buttons {
   display: flex;
   gap: 1rem;
-  justify-content: center;
+    justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -845,6 +855,104 @@ body {
 .access-buttons .button.is-light:hover {
   background: rgba(255, 255, 255, 0.3);
   border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Citation Section Styles */
+.citation-content {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.citation-text {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  text-align: center;
+}
+
+.citation-box {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.citation-bibtex {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
+}
+
+.citation-actions {
+    display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.citation-actions .button {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.citation-actions .button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.citation-actions .button.is-primary {
+  background: white;
+  color: #667eea;
+  border: none;
+}
+
+.citation-actions .button.is-primary:hover {
+  background: #f8f9fa;
+  color: #5a67d8;
+}
+
+.citation-actions .button.is-light {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.citation-actions .button.is-light:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Copy notification */
+.copy-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--success-gradient);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-xl);
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.copy-notification.show {
+  transform: translateX(0);
 }
 
 /* Utility Classes */

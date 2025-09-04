@@ -28,6 +28,59 @@
   <script src="./js/bulma-carousel.min.js"></script>
   <script src="./js/bulma-slider.min.js"></script>
   <script src="./js/index.js"></script>
+  <script>
+    function copyCitation() {
+      const citationText = `@article{chen2024ppm,
+  title={Programming Problem Merging: A Dynamic Benchmarking Strategy for Code Generation LLMs},
+  author={Chen, Simin and Pusarla, Pranav and Ray, Baishakhi},
+  journal={arXiv preprint arXiv:2401.15545},
+  year={2024}
+}`;
+      
+      navigator.clipboard.writeText(citationText).then(function() {
+        showCopyNotification();
+      }).catch(function(err) {
+        console.error('Could not copy text: ', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = citationText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showCopyNotification();
+      });
+    }
+    
+    function showCopyNotification() {
+      // Remove existing notification if any
+      const existing = document.querySelector('.copy-notification');
+      if (existing) {
+        existing.remove();
+      }
+      
+      // Create notification
+      const notification = document.createElement('div');
+      notification.className = 'copy-notification';
+      notification.innerHTML = '<i class="fas fa-check"></i> Citation copied to clipboard!';
+      document.body.appendChild(notification);
+      
+      // Show notification
+      setTimeout(() => {
+        notification.classList.add('show');
+      }, 100);
+      
+      // Hide notification after 3 seconds
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+          if (notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+          }
+        }, 300);
+      }, 3000);
+    }
+  </script>
 </head>
 <body>
 
@@ -137,6 +190,50 @@
   </div>
 </section>
 
+<!-- Citation Section -->
+<section class="section package-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="card package-card">
+          <div class="card-content">
+            <div class="content has-text-centered">
+              <h2 class="title is-3 section-title">Citation</h2>
+              <div class="citation-content">
+                <p class="citation-text">
+                  If you use PPM in your research, please cite our paper:
+                </p>
+                <div class="citation-box">
+                  <pre class="citation-bibtex"><code>@article{chen2024ppm,
+  title={Programming Problem Merging: A Dynamic Benchmarking Strategy for Code Generation LLMs},
+  author={Chen, Simin and Pusarla, Pranav and Ray, Baishakhi},
+  journal={arXiv preprint arXiv:2401.15545},
+  year={2024}
+}</code></pre>
+                </div>
+                <div class="citation-actions">
+                  <button class="button is-primary" onclick="copyCitation()">
+                    <span class="icon">
+                      <i class="fas fa-copy"></i>
+                    </span>
+                    <span>Copy Citation</span>
+                  </button>
+                  <a href="https://arxiv.org/pdf/2401.15545" class="button is-light">
+                    <span class="icon">
+                      <i class="fas fa-external-link-alt"></i>
+                    </span>
+                    <span>View on arXiv</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
@@ -152,13 +249,10 @@
               Reach out to <strong>Simin Chen</strong>, <strong>Pranav Pusarla</strong>, or <strong>Baishakhi Ray</strong> for any questions.
             </p>
             <div class="footer-links">
-              <a href="mailto:contact@codekaleidoscope.com" class="footer-link">
-                <i class="fas fa-envelope"></i>
-              </a>
               <a href="https://github.com/SeekingDream/PPM" class="footer-link">
                 <i class="fab fa-github"></i>
               </a>
-              <a href="https://arxiv.org/pdf/2401.15545" class="footer-link">
+              <a href="https://arxiv.org/abs/2401.15545" class="footer-link">
                 <i class="fas fa-file-pdf"></i>
               </a>
             </div>
