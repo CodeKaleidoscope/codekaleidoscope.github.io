@@ -368,6 +368,96 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
+/* Survey Section */
+.survey-section {
+  background: var(--bg-primary);
+}
+
+.survey-card {
+  background: var(--bg-primary);
+  border: none;
+  box-shadow: var(--shadow-xl);
+}
+
+.survey-visual {
+  margin: 2rem 0;
+}
+
+.survey-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.survey-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.survey-authors {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.survey-text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.survey-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.survey-actions .button {
+  padding: 1rem 2rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-lg);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-lg);
+}
+
+.survey-actions .button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.survey-actions .button.is-primary {
+  background: var(--primary-gradient);
+  border: none;
+  color: white;
+}
+
+.survey-actions .button.is-primary:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+.survey-actions .button.is-light {
+  background: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.survey-actions .button.is-light:hover {
+  background: var(--bg-secondary);
+  border-color: #667eea;
+  color: #667eea;
+}
+
 /* Problem and Solution Sections */
 .problem-section {
   background: var(--bg-primary);
@@ -610,6 +700,20 @@ body {
     grid-template-columns: 1fr;
   }
   
+  .survey-title {
+    font-size: 1.25rem;
+  }
+  
+  .survey-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .survey-actions .button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
   .features-grid {
     grid-template-columns: 1fr;
   }
@@ -652,6 +756,24 @@ body {
   .citation-text {
     font-size: 1.125rem;
     margin-bottom: 2rem;
+  }
+  
+  .related-paper-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .paper-title {
+    font-size: 1.25rem;
+  }
+  
+  .paper-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .paper-actions .button {
+    width: 100%;
+    max-width: 300px;
   }
   
   .package-buttons {
@@ -870,6 +992,88 @@ body {
 .access-buttons .button.is-light:hover {
   background: rgba(255, 255, 255, 0.3);
   border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Related Paper Section Styles */
+.related-paper-card {
+  background: var(--light-gradient);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  margin: 2rem 0;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.related-paper-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  background: var(--bg-primary);
+}
+
+.paper-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.paper-authors {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.paper-abstract {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.paper-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.paper-actions .button {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.paper-actions .button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.paper-actions .button.is-primary {
+  background: var(--primary-gradient);
+  border: none;
+  color: white;
+}
+
+.paper-actions .button.is-primary:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+.paper-actions .button.is-light {
+  background: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.paper-actions .button.is-light:hover {
+  background: var(--bg-secondary);
+  border-color: #667eea;
+  color: #667eea;
 }
 
 /* Citation Section Styles */
