@@ -873,11 +873,6 @@ body {
 }
 
 /* Citation Section Styles */
-.citation-content {
-  text-align: left;
-  max-width: 100%;
-  margin: 0 auto;
-}
 
 .citation-text {
   color: rgba(255, 255, 255, 0.9);
