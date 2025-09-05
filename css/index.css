@@ -640,12 +640,18 @@ body {
   }
   
   .citation-box {
-    padding: 1.5rem;
-    min-height: 150px;
+    padding: 2rem 1.5rem;
+    min-height: 250px;
   }
   
   .citation-bibtex {
     font-size: 0.8rem;
+    line-height: 1.6;
+  }
+  
+  .citation-text {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
   }
   
   .package-buttons {
@@ -875,21 +881,23 @@ body {
 
 .citation-text {
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2rem;
-  font-size: 1.125rem;
+  margin-bottom: 3rem;
+  font-size: 1.25rem;
   text-align: center;
+  line-height: 1.6;
 }
 
 .citation-box {
   background: rgba(0, 0, 0, 0.2);
   border-radius: var(--border-radius);
-  padding: 2rem;
+  padding: 3rem 2rem;
   margin: 2rem 0;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  min-height: 200px;
+  min-height: 300px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .citation-bibtex {
@@ -897,13 +905,15 @@ body {
   color: rgba(255, 255, 255, 0.9);
   font-family: 'JetBrains Mono', 'Courier New', monospace;
   font-size: 0.875rem;
-  line-height: 1.6;
+  line-height: 1.8;
   margin: 0;
   white-space: pre-wrap;
   word-wrap: break-word;
   overflow-x: hidden;
   overflow-wrap: break-word;
   hyphens: auto;
+  max-width: 100%;
+  word-break: break-word;
 }
 
 .citation-actions {
