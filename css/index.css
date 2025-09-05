@@ -124,10 +124,6 @@ body {
   align-items: center;
 }
 
-.hero * {
-  color: white !important;
-}
-
 .hero::before {
   content: '';
   position: absolute;
