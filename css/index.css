@@ -940,19 +940,6 @@ body {
   font-weight: 500;
 }
 
-.dataset-access {
-  margin: 3rem 0;
-  padding: 2rem;
-  background: var(--primary-gradient);
-  border-radius: var(--border-radius-lg);
-  color: white;
-}
-
-.dataset-access h3 {
-  color: white;
-  margin-bottom: 1rem;
-}
-
 .access-description {
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2rem;
