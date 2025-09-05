@@ -124,6 +124,10 @@ body {
   align-items: center;
 }
 
+.hero * {
+  color: white !important;
+}
+
 .hero::before {
   content: '';
   position: absolute;
@@ -511,6 +515,10 @@ body {
   background: var(--primary-gradient);
   color: white;
   position: relative;
+}
+
+.package-section * {
+  color: white !important;
 }
 
 .package-section::before {
@@ -938,6 +946,10 @@ body {
   background: var(--primary-gradient);
   border-radius: var(--border-radius-lg);
   color: white;
+}
+
+.dataset-access * {
+  color: white !important;
 }
 
 .dataset-access h3 {
