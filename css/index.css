@@ -513,10 +513,6 @@ body {
   position: relative;
 }
 
-.package-section * {
-  color: white !important;
-}
-
 .package-section::before {
   content: '';
   position: absolute;
